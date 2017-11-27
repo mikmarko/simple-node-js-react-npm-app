@@ -17,6 +17,11 @@ pipeline {
         sh './jenkins/scripts/test.sh'
       }
     }
+    stage('Deliver') {
+      steps {
+        input 'Finished? (click "Proceed to continue)"'
+      }
+    }
   }
   environment {
     CI = 'true'
